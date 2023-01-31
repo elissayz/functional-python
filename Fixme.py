@@ -6,9 +6,15 @@ and not for loops or list comprehensions.
 '''
 
 def evens(n):
+    
+    xs =range(n)
+    even = lambda n: n%2 == 0
+    xs = filter(even, xs)
+    xs = list(xs)
+    
     '''
     Returns a list of even numbers from 0 to n inclusive.
-
+    
     >>> evens(10)
     [0, 2, 4, 6, 8, 10]
     >>> evens(11)
@@ -20,9 +26,15 @@ def evens(n):
     >>> evens(-1)
     []
     '''
-
+        
 
 def threes(n):
+
+    xs = range(n)
+    three = lambda n: n % 10 == 3
+    xs = filter(tree, xs)
+    xs = list(xs)
+    
     '''
     Returns a list of all numbers from 0 to n inclusive that contain the digit 3.
 
