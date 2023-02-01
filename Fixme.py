@@ -70,7 +70,7 @@ def small_words(text):
         if len(word) < 5:
             return word
         else:
-            return''
+            return ''
     xs = filter(small, word)
     xs = list(xs)
 
