@@ -5,16 +5,22 @@ Your solutions should use the map and filter functions,
 and not for loops or list comprehensions.
 '''
 
+
 def evens(n):
-    
-    xs =range(n)
-    even = lambda n: n%2 == 0
+
+    xs = range(n)
+
+    def even(xs):
+        if n % 2 == 0:
+            return n
+        else:
+            return ''
     xs = filter(even, xs)
     xs = list(xs)
-    
+
     '''
     Returns a list of even numbers from 0 to n inclusive.
-    
+
     >>> evens(10)
     [0, 2, 4, 6, 8, 10]
     >>> evens(11)
@@ -26,18 +32,23 @@ def evens(n):
     >>> evens(-1)
     []
     '''
-        
+
 
 def threes(n):
 
     xs = range(n)
-    three = lambda n: n % 10 == 3
-    xs = filter(tree, xs)
-    xs = list(xs)
-    
-    '''
-    Returns a list of all numbers from 0 to n inclusive that contain the digit 3.
 
+    def three(xs):
+        if xs % 10 == 3:
+            return xs
+        else:
+            return ''
+    xs = filter(three, xs)
+    xs = list(xs)
+
+    '''
+    Returns a list of all numbers from 0 to n inclusive
+    that contain the digit 3.
     >>> threes(2)
     []
     >>> threes(3)
@@ -52,8 +63,20 @@ def threes(n):
 
 
 def small_words(text):
+
+    word = text.split()
+
+    def small(word):
+        if len(word) < 5:
+            return word
+        else:
+            return''
+    xs = filter(small, word)
+    xs = list(xs)
+
     '''
-    Returns a list of all words in the input text that are less than 5 characters long.
+    Returns a list of all words in the input text that are
+    less than 5 characters long.
 
     HINT:
     Recall that text.split() converts the text variable into a list of words.
@@ -74,7 +97,7 @@ def squares(n):
     xs = range(n)
     xs = map(lambda n: n * n, xs)
     xs = list(xs)
-    
+
     '''
     Returns a list of all square number between 1 and n inclusive.
     Recall that the nth square number is defined to be n*n.
@@ -91,8 +114,13 @@ def squares(n):
 
 
 def lengths(strings):
+
+    xs = len(strings)
+    xs = list(xs)
+
     '''
-    Given a list of strings, returns a list of the lengths of the corresponding strings.
+    Given a list of strings, returns a list of the lengths
+    of the corresponding strings.
 
     >>> lengths([])
     []
